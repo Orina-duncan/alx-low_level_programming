@@ -1,46 +1,25 @@
 #include "main.h" /*Include the header file with the function prototypes*/
-
 /**
-*_putchar-Custom implementation of putchar to satisfy instruction 10.
-*@c:The character to be written.
-*Return:On success, returns the character written.On error, -1 is returned.
-*/
-int _putchar(char c)
+ * puts_half - this function prints half of a string
+ * if odd len, n = (length_of_the_string - 1) / 2
+ * @str: input
+ * Return: half of input
+ */
+void puts_half(char *str)
 {
-	return (write(1, &c, 1));
-}
+	int a, n, longi;
 
-/**
-*_strlen-Returns the length of a string.
-*@str:Pointer to the input string.
-*Return:The length of the string.
-*/
-int _strlen(char *str)
-{
-	int length = 0;
+	longi = 0;
 
-	while (*str != '\0')
-	{
-	length++;
-	str++;
-    }
+	for (a = 0; str[a] != '\0'; a++)
+		longi++;
 
-	return (length);
-}
+	n = (longi / 2);
 
-/**
-*print_second_half-Prints the second half of a string followed by a new line.
-*@str:Pointer to the input string.
-*/
-void print_second_half(char *str)
-{
-	int length = _strlen(str);
-	int start_index = (length - 1) / 2; /*Start index for the second half*/
+	if ((longi % 2) == 1)
+		n = ((longi + 1) / 2);
 
-	while (str[start_index] != '\0')
-	{
-	_putchar(str[start_index]);
-	start_index++;
-    }
-	_putchar('\n'); /*Print a new line after printing the second half*/
+	for (a = n; str[a] != '\0'; a++)
+		_putchar(str[a]);
+	_putchar('\n');
 }

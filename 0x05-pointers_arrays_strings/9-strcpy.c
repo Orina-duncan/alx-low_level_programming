@@ -1,31 +1,23 @@
 #include "main.h" /*Include the header file with the function prototypes*/
 /**
-*_putchar-Custom implementation of putchar to satisfy instruction 10.
-*@c:The character to be written.
-*Return:On success,returns the character written.On error, -1 is returned.
-*/
-int _putchar(char c)
+ * char *_strcpy - this function copies the string pointed to by src
+ * @dest: copy to
+ * @src: copy from
+ * Return: string
+ */
+char *_strcpy(char *dest, char *src)
 {
-	return (write(1, &c, 1));
-}
-/**
-*_strcpy-Copies the string pointed to by src, including the terminating null byte (\0),
-*to buffer pointed to by dest.
-*@dest:Pointer to the destination buffer.
-*@src:Pointer to the source string.
-*Return:The pointer to dest.
-*/
-char *_strcpy(char *dest, const char *src)
-{
-	char *dest_ptr = dest;
+	int l = 0;
+	int x = 0;
 
-	while (*src != '\0')
+	while (*(src + l) != '\0')
 	{
-	*dest_ptr = *src;
-	dest_ptr++;
-	src++;
-    }
-	*dest_ptr = '\0'; /*Add the terminating null byte to dest*/
-
+		l++;
+	}
+	for ( ; x < l ; x++)
+	{
+		dest[x] = src[x];
+	}
+	dest[l] = '\0';
 	return (dest);
 }
