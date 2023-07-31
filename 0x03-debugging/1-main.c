@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
-* main - this will cause an infinite loop
-* Return: 0
+*main - will cause an infinite loop
+*Return: 0
 */
 int main(void)
 {
